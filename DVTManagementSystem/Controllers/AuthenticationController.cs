@@ -7,6 +7,7 @@ namespace DVTManagementSystem.Controllers
         // GET: Authentication
         public ActionResult Login()
         {
+
             return View();
         }
     }
