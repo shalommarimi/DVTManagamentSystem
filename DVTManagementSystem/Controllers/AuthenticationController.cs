@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using DVTManagementSystem.Models;
+using System.Web.Mvc;
 
 namespace DVTManagementSystem.Controllers
 {
@@ -7,6 +8,15 @@ namespace DVTManagementSystem.Controllers
         // GET: Authentication
         public ActionResult Login()
         {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(UserProfile profile)
+        {
+
+
 
             return View();
         }
