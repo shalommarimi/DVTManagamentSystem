@@ -25,6 +25,7 @@ _UpgradeReport_Files/
 DVTManagementSystem/bin/
 DVTManagementSystem/obj/
 DVTManagementSystem/TestResults/
+.vs/
 ###################
 # Web publish log #
 ###################
