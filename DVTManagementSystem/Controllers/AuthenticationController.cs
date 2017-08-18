@@ -28,28 +28,23 @@ namespace DVTManagementSystem.Controllers
 
 
 
-
-                    if (ModelState.IsValid == true)
+                    var user = context.UserProfiles.Single(u => u.EmailAddress == profile.EmailAddress && u.PasswordHash == profile.PasswordHash);
+                    if (user != null)
                     {
-                        var user = context.UserProfiles.Single(u => u.EmailAddress == profile.EmailAddress && u.PasswordHash == profile.PasswordHash);
-                        if (user != null)
-                        {
-                            //Session["UserId"] = user.PkLoginId.ToString();
-                            //Session["Username"] = user.Username.ToString();
-                            return RedirectToAction("Dashboard", "Applicant");
 
-                        }
-                        else
-                        {
-                            ModelState.AddModelError("", "Username or Password is incorrect");
+                        Session["FirstName"] = user.FirstName.ToString();
+                        Session["LastName"] = user.FirstName.ToString();
+                        return RedirectToAction("Dashboard", "Applicant");
 
-                        }
                     }
+
+
                 }
                 catch (System.Exception)
                 {
-                    ModelState.AddModelError("", "Database Access Error");
-                    //  throw;
+                    ModelState.AddModelError("", "Username or Password is incorrect");
+                    // return View();
+
                 }
             }
 
