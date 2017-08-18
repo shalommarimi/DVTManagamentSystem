@@ -10,7 +10,7 @@ namespace DVTManagementSystem.Models.ModelValidation
     public class SuburbMetadata
     {
         [Required]
-        public string HouseNumber { get; set; }
+        public string SuburbName { get; set; }
 
         [Required ]
         public string StreetName { get; set; }

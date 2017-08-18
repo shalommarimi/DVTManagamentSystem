@@ -12,7 +12,7 @@ namespace DVTManagementSystem.Models
     {
 
         public int AddressId { get; set; }
-
+        public string  HouseNumber { get; set; }
         public int AddressTypeId { get; set; }
 
         public int SuburbId { get; set; }

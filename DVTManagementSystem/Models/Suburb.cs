@@ -9,7 +9,7 @@ namespace DVTManagementSystem.Models
     {
         public int SuburbId  { get; set; }
 
-        public string HouseNumber { get; set; }
+        public string SuburbName { get; set; }
 
         public string StreetName { get; set; }
 

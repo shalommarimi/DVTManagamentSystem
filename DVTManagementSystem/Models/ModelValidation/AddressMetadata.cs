@@ -14,6 +14,9 @@ namespace DVTManagementSystem.Models.ModelValidation
         public int AddressTypeId { get; set; }
 
         [Required ]
+        public string HouseNumber { get; set; }
+
+        [Required ]
         public int SuburbId { get; set; }
         
         [ForeignKey("AddressTypeId")]
