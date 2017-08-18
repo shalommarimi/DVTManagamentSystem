@@ -162,6 +162,10 @@
     <Compile Include="Migrations\201708180807157_LookupTables.Designer.cs">
       <DependentUpon>201708180807157_LookupTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708181136435_LookupTables1.cs" />
+    <Compile Include="Migrations\201708181136435_LookupTables1.Designer.cs">
+      <DependentUpon>201708181136435_LookupTables1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AddressType.cs" />
@@ -214,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708180807157_LookupTables.resx">
       <DependentUpon>201708180807157_LookupTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708181136435_LookupTables1.resx">
+      <DependentUpon>201708181136435_LookupTables1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
