@@ -145,13 +145,45 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708171431347_AddingModels.cs" />
+    <Compile Include="Migrations\201708171431347_AddingModels.Designer.cs">
+      <DependentUpon>201708171431347_AddingModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708180807157_LookupTables.cs" />
+    <Compile Include="Migrations\201708180807157_LookupTables.Designer.cs">
+      <DependentUpon>201708180807157_LookupTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AddressType.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Context\DVTManagementSystemContext.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\ModelValidation\AddressMetadata.cs" />
+    <Compile Include="Models\ModelValidation\AddressTypeMetadata.cs" />
+    <Compile Include="Models\ModelValidation\CityMetadata.cs" />
+    <Compile Include="Models\ModelValidation\DepartmentMetadata.cs" />
+    <Compile Include="Models\ModelValidation\GenderMetadata.cs" />
+    <Compile Include="Models\ModelValidation\PostalCodeMetadata.cs" />
+    <Compile Include="Models\ModelValidation\ProvinceMetadata.cs" />
+    <Compile Include="Models\ModelValidation\SuburbMetadata.cs" />
+    <Compile Include="Models\ModelValidation\UserProfileMetadata.cs" />
+    <Compile Include="Models\ModelValidation\UserTypeMetadata.cs" />
+    <Compile Include="Models\PostalCode.cs" />
+    <Compile Include="Models\Province.cs" />
+    <Compile Include="Models\Suburb.cs" />
+    <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Models\UserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -172,10 +204,17 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708171431347_AddingModels.resx">
+      <DependentUpon>201708171431347_AddingModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708180807157_LookupTables.resx">
+      <DependentUpon>201708180807157_LookupTables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
