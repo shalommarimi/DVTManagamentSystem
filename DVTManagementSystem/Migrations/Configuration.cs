@@ -36,7 +36,10 @@ namespace DVTManagementSystem.Migrations
                 new Province {ProvinceId = 3, ProvinceName = "Freestate"},
                 new Province {ProvinceId = 4, ProvinceName = "North west"},
                 new Province {ProvinceId = 5, ProvinceName = "Cape town"},
-                new Province {ProvinceId = 6, ProvinceName = "Kwazulu Natal" }
+                new Province {ProvinceId = 6, ProvinceName = "Kwazulu Natal" },
+                new Province {ProvinceId = 7, ProvinceName = "Free State" },
+                new Province {ProvinceId = 8, ProvinceName = "Eastern Cape" },
+                 new Province {ProvinceId = 9, ProvinceName = "Northern Cape" }
 
             };
             province.ForEach(pro => context.Provinces.AddOrUpdate(pr => new
