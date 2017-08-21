@@ -152,6 +152,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Account\LostPasswordController.cs" />
+    <Compile Include="Controllers\Account\ResetPasswordController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,6 +170,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel\LostPasswordModel.cs" />
+    <Compile Include="Models\AccountModel\ResetPasswordModel.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AddressType.cs" />
     <Compile Include="Models\City.cs" />
@@ -211,6 +213,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\forgotPassword\" />
     <Folder Include="Views\LostPassword\" />
+    <Folder Include="Views\ResetPassword\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
