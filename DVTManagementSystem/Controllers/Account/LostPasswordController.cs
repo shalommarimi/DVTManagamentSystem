@@ -60,11 +60,12 @@ namespace DVTManagementSystem.Controllers.Account
 
                         string subject = "Reset your password DVT management system";
                         string body = "Click the link to reset the password";
-                        string from = "donotreply@gmail.com";
+                        string from = "dvtdonotreply@gmail.com";
 
                         MailMessage _messages = new MailMessage(from, _LostPasswordmodel.email);
                         _messages.Subject = subject;
                         _messages.Body = body;
+                        _messages.IsBodyHtml = true;
                         SmtpClient _client = new SmtpClient();
                         try
                         {
