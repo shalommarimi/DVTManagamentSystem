@@ -151,7 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ForgotPassword\forgotPasswordController.cs" />
+    <Compile Include="Controllers\Account\LostPasswordController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -168,6 +168,7 @@
       <DependentUpon>201708181136435_LookupTables1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountModel\LostPasswordModel.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AddressType.cs" />
     <Compile Include="Models\City.cs" />
@@ -209,6 +210,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\forgotPassword\" />
+    <Folder Include="Views\LostPassword\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
