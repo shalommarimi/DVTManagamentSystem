@@ -215,16 +215,15 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
 
-<<<<<<< HEAD
+
     <Folder Include="Views\Authentication\" />
 
     <Folder Include="Models\" />
     <Folder Include="Views\Authentication\" />
-=======
+
     <Folder Include="Models\" />
     <Folder Include="Views\Authentication\" />
 
->>>>>>> master
     <Folder Include="Controllers\" />
 
   </ItemGroup>

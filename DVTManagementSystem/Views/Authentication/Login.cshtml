@@ -1,4 +1,4 @@
-﻿@Model  DVTManagementSystem.Models.UserProfile
+﻿@model  DVTManagementSystem.Models.UserProfile
 @{
     ViewBag.Title = "Login";
 }
@@ -7,7 +7,14 @@
 
    @using (Html.BeginForm("Login", "Authentication"))
    {
-      @*@Html.DisplayNameFor(model=> model.EmailAddress )*@
+    <div>  @Html.DisplayNameFor(model=> model.EmailAddress )
+       @Html.EditorFor(model=> model.EmailAddress )
+    </div>
+    <div>
+       @Html.Name("Password")
+       @Html.PasswordFor(model=> model.PasswordHash)
+</div>
+       <input type="button" value="Login" class="btn btn-default" >
    }
     @Html.ActionLink("Forgot Password","")
 </div>
