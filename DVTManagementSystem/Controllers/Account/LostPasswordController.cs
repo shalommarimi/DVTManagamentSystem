@@ -10,6 +10,7 @@ using DVTManagementSystem.Models.AccountModel;
 using DVTManagementSystem.Models.Context;
 using System.Web.Security;
 using System.Net.Mail;
+using WebMatrix.WebData;
 
 
 namespace DVTManagementSystem.Controllers.Account
@@ -33,6 +34,7 @@ namespace DVTManagementSystem.Controllers.Account
             if (ModelState.IsValid)
             {
                 UserProfile _userProfile = new UserProfile();
+                MembershipUser user;
                 //Checking if the userEmail exist
                 using (var _userProfileDBContext = new DVTManagementSystemContext())
                 {
@@ -43,21 +45,21 @@ namespace DVTManagementSystem.Controllers.Account
                     {
                         //waiting for the method of selecting all existing users
                         //_userProfile=UserProfile.
-
+                        user = Membership.GetUser(_ExistUser.ToString());
                     }
                     else
                     {
-                        _userProfile = null;
+                        user = null;
                     }
                     //Generating the password token for User
-                    if (_userProfile != null)
+                    if (user != null)
                     {
-                        //researchin about generatinfg tokens
-                        //var token;
+                        
+                        var token=WebSecurity.GeneratePasswordResetToken(user.UserName);
 
 
                         //generating the link for reset password
-                        //string resetPasswordLink = "<a href='" + Url.Action("ResetPassword", "Account", new { reset = token }, "https") + "'>Reset Password Link <a/>";
+                        string resetPasswordLink = "<a href='" + Url.Action("ResetPassword", "Account", new { reset = token }, "https") + "'>Reset Password Link <a/>";
 
                         string subject = "Reset your password DVT management system";
                         string body = "Click the link to reset the password";
