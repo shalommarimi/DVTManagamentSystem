@@ -12,10 +12,11 @@ namespace DVTManagementSystem.Models.AccountModel
 {
     public class LostPasswordModel
     {
-        //waiting for the login model sothat i can envoke the model state
+        
         [Required(ErrorMessage ="Please enter your email address to receive the reset password link")]
         [Display(Name ="Your email address")]
         [EmailAddress(ErrorMessage ="Not a valid email address")]
         public string email { get; set; }
+
     }
 }

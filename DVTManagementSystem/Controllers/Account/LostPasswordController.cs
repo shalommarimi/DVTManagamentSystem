@@ -28,12 +28,10 @@ namespace DVTManagementSystem.Controllers.Account
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-
         public ActionResult LostPassword(LostPasswordModel _LostPasswordmodel)
         {
             if (ModelState.IsValid)
             {
-                UserProfile _userProfile = new UserProfile();
                 MembershipUser user;
                 //Checking if the userEmail exist
                 using (var _userProfileDBContext = new DVTManagementSystemContext())
@@ -43,8 +41,7 @@ namespace DVTManagementSystem.Controllers.Account
                                       select x.FirstName).FirstOrDefault();
                     if (_ExistUser != null)
                     {
-                        //waiting for the method of selecting all existing users
-                        //_userProfile=UserProfile.
+
                         user = Membership.GetUser(_ExistUser.ToString());
                     }
                     else
@@ -80,19 +77,15 @@ namespace DVTManagementSystem.Controllers.Account
                         }
                     }
 
-
-
                     else
                     {
                         ModelState.AddModelError("", "No user found by that email:");
                     }
 
-
                 }
 
             }
             return View(_LostPasswordmodel);
-
         }
     }
 }

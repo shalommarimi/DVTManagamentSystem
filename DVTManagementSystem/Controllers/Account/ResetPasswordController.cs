@@ -30,7 +30,7 @@ namespace DVTManagementSystem.Controllers.Account
         {
             if (ModelState.IsValid)
             {
-                //namespace for websecurity
+                
                 bool response = WebSecurity.ResetPassword(_resetPasswordmodel.ReturnToken, _resetPasswordmodel.Password);
                 if (response)
                 {
