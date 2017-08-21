@@ -43,7 +43,6 @@ namespace DVTManagementSystem.Controllers
                 catch (System.Exception)
                 {
                     ModelState.AddModelError("", "Username or Password is incorrect");
-                    // return View();
 
                 }
             }
