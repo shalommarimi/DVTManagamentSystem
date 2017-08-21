@@ -1,44 +1,21 @@
-﻿
+﻿@model  DVTManagementSystem.Models.UserProfile
 @{
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<h1>Login</h1>
 
-@*<fieldset>
-    <legend>Login Form Example</legend>
+@using (Html.BeginForm("Login", "Authentication"))
+{
+    <div>
+        @Html.DisplayNameFor(model => model.EmailAddress)
+        @Html.EditorFor(model => model.EmailAddress)
+    </div>
+    <div>
+        @Html.Name("Password")
+        @Html.PasswordFor(model => model.PasswordHash)
+    </div>
+    <input type="submit" value="Login" class="btn btn-default">
+}
+@Html.ActionLink("Forgot Password", "")
 
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-    @if (@ViewBag.Message != null)
-    {
-        <div style="border: 1px solid red">
-            @ViewBag.Message
-        </div>
-    }
-    <table>
-        <tr>
-            <td>@Html.LabelFor(a => e.Email)</td>
-            <td>@Html.TextBoxFor(a => e.Email)</td>
-            <td>@Html.ValidationMessageFor(e => a.Email)</td>
-        </tr>
-        <tr>
-            <td>
-                @Html.LabelFor(a => p.Password)
-            </td>
-            <td>
-                @Html.PasswordFor(a => p.Password)
-            </td>
-            <td>
-                @Html.ValidationMessageFor(a => p.Password)
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Login" />
-            </td>
-            <td></td>
-        </tr>
-    </table>
-</fieldset>*@ 
