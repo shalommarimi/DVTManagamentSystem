@@ -13,7 +13,7 @@ namespace DVTManagementSystem.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201708220741458_initial"; }
+            get { return "201708220818257_initial"; }
         }
         
         string IMigrationMetadata.Source
