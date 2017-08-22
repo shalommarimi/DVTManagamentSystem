@@ -5,12 +5,14 @@
 
 <h1>Login</h1>
 
-   @using (Html.BeginForm("Login", "Authentication"))
-   {
-    <div>  @Html.DisplayNameFor(model=> model.EmailAddress )
-       @Html.EditorFor(model=> model.EmailAddress )
+@using (Html.BeginForm("Login", "Authentication"))
+{
+    <div>
+        @Html.DisplayNameFor(model => model.EmailAddress)
+        @Html.EditorFor(model => model.EmailAddress)
     </div>
     <div>
+<<<<<<< HEAD
        @Html.Name("Password")
        @Html.PasswordFor(model=> model.PasswordHash)
 </div>
@@ -20,3 +22,12 @@
 
 
   
+=======
+        @Html.Name("Password")
+        @Html.PasswordFor(model => model.PasswordHash)
+    </div>
+    <input type="submit" value="Login" class="btn btn-default">
+}
+@Html.ActionLink("Forgot Password", "")
+
+>>>>>>> 4fd9bb0bd9bb968ef192e831db8028099f7faf25

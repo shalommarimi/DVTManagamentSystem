@@ -23,6 +23,7 @@ namespace DVTManagementSystem.Controllers
 
                 try
                 {
+
                     var PasswordHashingmMethod = new PasswordHashing();
                     string HashedPassword = PasswordHashingmMethod.HashInput(profile.PasswordHash);
 
@@ -42,7 +43,7 @@ namespace DVTManagementSystem.Controllers
                 }
                 catch (System.Exception)
                 {
-                    ModelState.AddModelError("", "Username or Password is incorrect");
+                    ModelState.AddModelError(string.Empty, "Username or Password is incorrect");
 
                 }
             }
