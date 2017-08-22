@@ -34,7 +34,7 @@ namespace DVTManagementSystem.Models
 
         public int DepartmentId { get; set; }
 
-        public byte IsApproved { get; set; }
+        public bool IsApproved { get; set; }
 
         public virtual Gender Gender { get; set; }
 
