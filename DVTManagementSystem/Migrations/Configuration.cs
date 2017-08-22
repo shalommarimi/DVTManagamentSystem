@@ -22,11 +22,11 @@ namespace DVTManagementSystem.Migrations
                 new Province {ProvinceId = 2, ProvinceName = "Limpopo"},
                 new Province {ProvinceId = 3, ProvinceName = "Free State"},
                 new Province {ProvinceId = 4, ProvinceName = "North West"},
-                new Province {ProvinceId = 5, ProvinceName = "Cape Town"},
+                new Province {ProvinceId = 5, ProvinceName = "Western Cape"},
                 new Province {ProvinceId = 6, ProvinceName = "Kwazulu Natal" },
-                new Province {ProvinceId = 6, ProvinceName = "Northern Cape" },
-                new Province {ProvinceId = 6, ProvinceName = "Eastern Cape" },
-                new Province {ProvinceId = 6, ProvinceName = "Mpumalanga" }
+                new Province {ProvinceId = 7, ProvinceName = "Northern Cape" },
+                new Province {ProvinceId = 8, ProvinceName = "Eastern Cape" },
+                new Province {ProvinceId = 9, ProvinceName = "Mpumalanga" }
 
 
 
