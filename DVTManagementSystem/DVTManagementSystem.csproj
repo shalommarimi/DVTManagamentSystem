@@ -154,17 +154,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708171431347_AddingModels.cs" />
-    <Compile Include="Migrations\201708171431347_AddingModels.Designer.cs">
-      <DependentUpon>201708171431347_AddingModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708180807157_LookupTables.cs" />
-    <Compile Include="Migrations\201708180807157_LookupTables.Designer.cs">
-      <DependentUpon>201708180807157_LookupTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708181136435_LookupTables1.cs" />
-    <Compile Include="Migrations\201708181136435_LookupTables1.Designer.cs">
-      <DependentUpon>201708181136435_LookupTables1.cs</DependentUpon>
+    <Compile Include="Migrations\201708220602406_initial.cs" />
+    <Compile Include="Migrations\201708220602406_initial.Designer.cs">
+      <DependentUpon>201708220602406_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -213,14 +205,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708171431347_AddingModels.resx">
-      <DependentUpon>201708171431347_AddingModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708180807157_LookupTables.resx">
-      <DependentUpon>201708180807157_LookupTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708181136435_LookupTables1.resx">
-      <DependentUpon>201708181136435_LookupTables1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708220602406_initial.resx">
+      <DependentUpon>201708220602406_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

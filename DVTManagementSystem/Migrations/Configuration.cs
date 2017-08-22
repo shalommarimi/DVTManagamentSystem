@@ -109,8 +109,10 @@ namespace DVTManagementSystem.Migrations
 
             };
 
-            addressType.ForEach(addty => context.AddressTypes.AddOrUpdate(add => add.TypeOfAddress, addty));
-
+            department.ForEach(dep => context.Departments.AddOrUpdate(depar => depar.DepartmentName, dep));
+            context.SaveChanges();
         }
+
+        
     }
 }
