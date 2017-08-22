@@ -3,7 +3,7 @@ namespace DVTManagementSystem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddingModels : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -12,6 +12,7 @@ namespace DVTManagementSystem.Migrations
                 c => new
                     {
                         AddressId = c.Int(nullable: false, identity: true),
+                        HouseNumber = c.String(nullable: false),
                         AddressTypeId = c.Int(nullable: false),
                         SuburbId = c.Int(nullable: false),
                     })
@@ -35,7 +36,7 @@ namespace DVTManagementSystem.Migrations
                 c => new
                     {
                         SuburbId = c.Int(nullable: false, identity: true),
-                        HouseNumber = c.String(),
+                        SuburbName = c.String(),
                         StreetName = c.String(),
                         PostalCodeId = c.Int(nullable: false),
                         CityId = c.Int(nullable: false),
@@ -91,7 +92,7 @@ namespace DVTManagementSystem.Migrations
                         EmailAddress = c.String(nullable: false),
                         PasswordHash = c.String(nullable: false),
                         DepartmentId = c.Int(nullable: false),
-                        IsApproved = c.Byte(nullable: false),
+                        IsApproved = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.UserProfileId)
                 .ForeignKey("dbo.Departments", t => t.DepartmentId, cascadeDelete: true)

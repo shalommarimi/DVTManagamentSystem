@@ -1,9 +1,6 @@
 ﻿using DVTManagementSystem.Models.ModelValidation;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace DVTManagementSystem.Models
 {
@@ -37,13 +34,13 @@ namespace DVTManagementSystem.Models
 
         public int DepartmentId { get; set; }
 
-        public byte IsApproved { get; set; }
+        public bool IsApproved { get; set; }
 
-        public virtual Gender  Gender { get; set; }
+        public virtual Gender Gender { get; set; }
 
-        public virtual UserType  UserType { get; set; }
+        public virtual UserType UserType { get; set; }
 
-        public virtual Department  Department { get; set; }
+        public virtual Department Department { get; set; }
 
         public virtual ICollection<Address> Address { get; set; }
 
