@@ -86,7 +86,7 @@ namespace DVTManagementSystem.Controllers
             var us = DVTcontext.UserProfiles.Where(u => u.UserProfileId == id).FirstOrDefault();
             DVTcontext.UserProfiles.Remove(us);
             DVTcontext.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("UserList");
         }
 
     }
