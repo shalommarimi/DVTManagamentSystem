@@ -109,7 +109,9 @@ namespace DVTManagementSystem.Migrations
 
             };
 
-            department.ForEach(dep => context.Departments.AddOrUpdate(depar => depar.DepartmentName, dep));
+            department.ForEach(d => context.Departments.AddOrUpdate(dep => dep.DepartmentName, d));
+
+
             context.SaveChanges();
         }
 
