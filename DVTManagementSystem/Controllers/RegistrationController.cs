@@ -11,13 +11,6 @@ namespace DVTManagementSystem.Controllers
 {
     public class RegistrationController : Controller
     {
-        // GET: Register
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        [HttpPost]
         public ActionResult Register(UserProfile register)
         {
             if (ModelState.IsValid)
