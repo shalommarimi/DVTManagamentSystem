@@ -16,27 +16,19 @@ namespace DVTManagementSystem.Migrations
 
         protected override void Seed(DVTManagementSystem.Models.Context.DVTManagementSystemContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
-
             var province = new List<Province>
             {
                 new Province {ProvinceId = 1,ProvinceName = "Gauteng"},
                 new Province {ProvinceId = 2, ProvinceName = "Limpopo"},
-                new Province {ProvinceId = 3, ProvinceName = "Freestate"},
-                new Province {ProvinceId = 4, ProvinceName = "North west"},
-                new Province {ProvinceId = 5, ProvinceName = "Cape town"},
-                new Province {ProvinceId = 6, ProvinceName = "Kwazulu Natal" }
+                new Province {ProvinceId = 3, ProvinceName = "Free State"},
+                new Province {ProvinceId = 4, ProvinceName = "North West"},
+                new Province {ProvinceId = 5, ProvinceName = "Western Cape"},
+                new Province {ProvinceId = 6, ProvinceName = "Kwazulu Natal" },
+                new Province {ProvinceId = 7, ProvinceName = "Northern Cape" },
+                new Province {ProvinceId = 8, ProvinceName = "Eastern Cape" },
+                new Province {ProvinceId = 9, ProvinceName = "Mpumalanga" }
+
+
 
             };
             province.ForEach(pro => context.Provinces.AddOrUpdate(pr => new
@@ -92,13 +84,13 @@ namespace DVTManagementSystem.Migrations
             {
                 new AddressType {AddressTypeId = 1, TypeOfAddress = "Physical Address" },
                 new AddressType {AddressTypeId = 2 , TypeOfAddress =" Postal Address"},
-               
+
             };
 
-            addressType.ForEach(addty => context.AddressTypes.AddOrUpdate(add => add.TypeOfAddress, addty));
+            addressType.ForEach(daddty => context.AddressTypes.AddOrUpdate(add => add.TypeOfAddress, daddty));
 
 
-            var department = new List<Department >
+            var department = new List<Department>
             {
                 new Department  {DepartmentId = 1, DepartmentName = "GMIC", DepartmentDescription = "Gauteng Microsoft  "},
                 new Department  {DepartmentId = 2 , DepartmentName ="GMOB", DepartmentDescription="Gauteng Mobility"},
@@ -106,7 +98,10 @@ namespace DVTManagementSystem.Migrations
 
             };
 
-            addressType.ForEach(addty => context.AddressTypes.AddOrUpdate(add => add.TypeOfAddress, addty));
+            department.ForEach(d => context.Departments.AddOrUpdate(dep => dep.DepartmentName, d));
+            context.SaveChanges();
+
+
 
         }
     }

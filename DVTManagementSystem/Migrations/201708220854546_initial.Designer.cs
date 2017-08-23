@@ -7,13 +7,13 @@ namespace DVTManagementSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class LookupTables : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(LookupTables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201708180807157_LookupTables"; }
+            get { return "201708220854546_initial"; }
         }
         
         string IMigrationMetadata.Source
