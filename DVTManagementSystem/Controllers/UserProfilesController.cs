@@ -18,6 +18,7 @@ namespace DVTManagementSystem.Controllers
         // GET: UserProfiles
         public ActionResult Index()
         {
+
             var userProfiles = db.UserProfiles.Include(u => u.Department).Include(u => u.Gender).Include(u => u.UserType);
             return View(userProfiles.ToList());
         }
