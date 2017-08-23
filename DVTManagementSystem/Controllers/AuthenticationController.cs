@@ -27,19 +27,18 @@ namespace DVTManagementSystem.Controllers
                     var PasswordHashingmMethod = new PasswordHashing();
                     string HashedPassword = PasswordHashingmMethod.HashInput(profile.PasswordHash);
 
-
+                       
 
                     var user = context.UserProfiles.Single(u => u.EmailAddress == profile.EmailAddress && u.PasswordHash == profile.PasswordHash && u.IsApproved == true);
                     if (user != null)
                     {
-
+                        
                         Session["FirstName"] = user.FirstName.ToString();
                         Session["LastName"] = user.FirstName.ToString();
                         return RedirectToAction("Dashboard", "Applicant");
 
-                    }
-
-
+                    } 
+                 
                 }
                 catch (System.Exception)
                 {
@@ -47,7 +46,6 @@ namespace DVTManagementSystem.Controllers
 
                 }
             }
-
 
             return View();
         }
