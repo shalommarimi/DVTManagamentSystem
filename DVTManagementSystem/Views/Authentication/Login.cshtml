@@ -12,10 +12,13 @@
         @Html.EditorFor(model => model.EmailAddress)
     </div>
     <div>
-        @Html.Name("Password")
-        @Html.PasswordFor(model => model.PasswordHash)
-    </div>
-    <input type="submit" value="Login" class="btn btn-default">
-}
-@Html.ActionLink("Forgot Password", "")
 
+       @Html.Name("Password")
+       @Html.PasswordFor(model=> model.PasswordHash)
+</div>
+       <input type="submit" value="Login" class="btn btn-default" >
+   }
+    
+
+
+  
