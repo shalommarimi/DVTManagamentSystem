@@ -19,85 +19,104 @@
             <label for="name" class="col-md-2 control-label">First Name</label>
             <div class="col-sm-10">
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your First Name" } })
-                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+  
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your First Name" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                 </div>
-        </div>
-
+                </div>
+            </div>
+      
         <div class="form-group">
             <label for="name" class="col-md-2 control-label">Last Name</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder="Enterr Your Last Name" } })
-                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-            </div>
+                <div class="input-group">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enterr Your Last Name" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-md-2 control-label">Identity Number</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.IdentityNumber, new { htmlAttributes = new { @class = "form-control", placeholder="Enter Your Id Number" } })
-                @Html.ValidationMessageFor(model => model.IdentityNumber, "", new { @class = "text-danger" })
-            </div>
+                <div class="input-group">
+                    @Html.EditorFor(model => model.IdentityNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Id Number" } })
+                    @Html.ValidationMessageFor(model => model.IdentityNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-md-2 control-label">Date Of Birth</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
-            </div>
+                <div class="input-group">
+                    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+                    </div>
+                </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-md-2 control-label">Gender</label>
             <div class="col-md-10">
-                @Html.DropDownList("GenderTypeId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.GenderTypeId, "", new { @class = "text-danger" })
-            </div>
+                <div class="input-group">
+                    @Html.DropDownList("GenderTypeId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.GenderTypeId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-md-2 control-label">User Type</label>
             <div class="col-md-10">
-                @Html.DropDownList("UserTypeId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.UserTypeId, "", new { @class = "text-danger" })
-            </div>
+                <div class="input-group">
+                    @Html.DropDownList("UserTypeId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UserTypeId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-md-2 control-label">Phone Number</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", placeholder="Enter Your Phone Number" } })
-                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-            </div>
+                <div class="input-group">
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Phone Number" } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-md-2 control-label">Email Address</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control", placeholder="Enter Your Email Address" } })
-                @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
-            </div>
+                <div class="input-group">
+                    @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Your Email Address" } })
+                    @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+                    </div>
+                </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-md-2 control-label">Password</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PasswordHash, new { htmlAttributes = new { @class = "form-control", placeholder="Password" } })
-                @Html.ValidationMessageFor(model => model.PasswordHash, "", new { @class = "text-danger" })
-            </div>
+                <div class="input-group">
+                    @Html.EditorFor(model => model.PasswordHash, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+                    @Html.ValidationMessageFor(model => model.PasswordHash, "", new { @class = "text-danger" })
+                    </div>
+                    </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-md-2 control-label">Department</label>
             <div class="col-md-10">
-                @Html.DropDownList("DepartmentId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
-            </div>
+                <div class="input-group">
+                    @Html.DropDownList("DepartmentId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             <label for="name" class="col-md-2 control-label">Is Approved</label>
             <div class="col-md-10">
                 <div class="checkbox">
@@ -105,7 +124,7 @@
                     @Html.ValidationMessageFor(model => model.IsApproved, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -113,7 +132,6 @@
             </div>
         </div>
     </div>
-        </div>
 }
 
 <div>
