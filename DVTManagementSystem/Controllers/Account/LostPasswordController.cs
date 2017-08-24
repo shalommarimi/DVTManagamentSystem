@@ -27,7 +27,7 @@ namespace DVTManagementSystem.Controllers.Account
 
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+       /// [ValidateAntiForgeryToken]
         public ActionResult LostPassword(LostPasswordModel _LostPasswordmodel)
         {
             if (ModelState.IsValid)
