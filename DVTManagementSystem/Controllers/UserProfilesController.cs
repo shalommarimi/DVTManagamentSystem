@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DVTManagementSystem.Models;
 using DVTManagementSystem.Models.Context;
+using DVTManagementSystem.Services;
 
 namespace DVTManagementSystem.Controllers
 {
@@ -15,12 +16,17 @@ namespace DVTManagementSystem.Controllers
     {
         private DVTManagementSystemContext db = new DVTManagementSystemContext();
 
+
         // GET: UserProfiles
+
+
         public ActionResult Index()
+
         {
 
-            var userProfiles = db.UserProfiles.Include(u => u.Department).Include(u => u.Gender).Include(u => u.UserType);
-            return View(userProfiles.ToList());
+
+            var userProfile = db.UserProfiles.Include(u => u.Department).Include(u => u.Gender).Include(u => u.UserType);
+            return View(userProfile.ToList());
         }
 
         // GET: UserProfiles/Details/5
@@ -40,12 +46,18 @@ namespace DVTManagementSystem.Controllers
 
         // GET: UserProfiles/Create
         public ActionResult Create()
+
+
+
         {
             ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentName");
             ViewBag.GenderTypeId = new SelectList(db.Genders, "GenderId", "GenderType");
             ViewBag.UserTypeId = new SelectList(db.UserTypes, "UserTypeId", "UserRole");
             return View();
         }
+
+
+
 
         // POST: UserProfiles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -56,9 +68,12 @@ namespace DVTManagementSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                var passwordHashing = new PasswordHashing();
+                userProfile.PasswordHash = passwordHashing.HashInput(userProfile.PasswordHash);
                 db.UserProfiles.Add(userProfile);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentName", userProfile.DepartmentId);

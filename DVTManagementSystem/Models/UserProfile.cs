@@ -43,6 +43,6 @@ namespace DVTManagementSystem.Models
         public virtual Department Department { get; set; }
 
         public virtual ICollection<Address> Address { get; set; }
-
+        public static string PasswordHashing { get; internal set; }
     }
 }
