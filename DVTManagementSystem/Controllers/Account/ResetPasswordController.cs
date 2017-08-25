@@ -24,8 +24,6 @@ namespace DVTManagementSystem.Controllers.Account
         }
 
 
-
-
         [HttpPost]
         [AllowAnonymous]
        // [ValidateAntiForgeryToken]
