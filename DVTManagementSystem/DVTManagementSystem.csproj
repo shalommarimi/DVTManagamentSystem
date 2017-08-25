@@ -221,6 +221,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
     <Content Include="Views\LostPassword\LostPassword.cshtml" />
+    <Content Include="Views\ResetPassword\ResetPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -231,7 +232,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\forgotPassword\" />
-    <Folder Include="Views\ResetPassword\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
