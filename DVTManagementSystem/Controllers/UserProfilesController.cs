@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using DVTManagementSystem.Models;
+using DVTManagementSystem.Models.Context;
+using DVTManagementSystem.Services;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using DVTManagementSystem.Models;
-using DVTManagementSystem.Models.Context;
-using DVTManagementSystem.Services;
 
 namespace DVTManagementSystem.Controllers
 {
@@ -56,7 +52,10 @@ namespace DVTManagementSystem.Controllers
             return View();
         }
 
-
+        public ActionResult UserProfile()
+        {
+            return View();
+        }
 
 
         // POST: UserProfiles/Create
