@@ -39,9 +39,11 @@ namespace DVTManagementSystem.Controllers.Account
                 else
                 {
                     ViewBag.Message = "Password change was unsuccesful";
-                }
+              }
             }
             return View(_resetPasswordmodel);
+
+           
         }
 
 
