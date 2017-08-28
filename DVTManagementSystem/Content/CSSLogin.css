@@ -3,16 +3,17 @@
 }
 
 .titles
-{    align-items:center;
-    font-family:'Times New Roman', Times, serif;
+{   align-items:center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size:larger;
     color:#000;
-    border-bottom:ridge;
+    border-bottom:double;
     border-color:#000;
     border-width:1px;
     width: 130px;
     margin-bottom:50px;
     padding-left:10px;
+    padding-bottom:10px;;
     margin-left:50px;
 }
 
@@ -26,12 +27,10 @@
     font-size:large;
     width:auto;
     padding:80px 20px 10px 80px;
-    margin-left:80px;
-    margin-right:80px;
-    align-content:left;
+    margin-left:280px;
     border:double;
     border-color:ActiveBorder;
-    padding-left:80px;
+    padding-left:100px;
    
 }
 
