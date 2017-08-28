@@ -73,7 +73,7 @@ namespace DVTManagementSystem.Controllers
                 userProfile.PasswordHash = passwordHashing.HashInput(userProfile.PasswordHash);
                 db.UserProfiles.Add(userProfile);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("UserProfile");
             }
 
             ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentName", userProfile.DepartmentId);
