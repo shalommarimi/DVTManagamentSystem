@@ -172,6 +172,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\PopUpFunction.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -181,9 +182,7 @@
     <Compile Include="App_Start\SimpleMembershipMvc3.cs" />
     <Compile Include="Controllers\Account\LostPasswordController.cs" />
     <Compile Include="Controllers\Account\ResetPasswordController.cs" />
-
     <Compile Include="Controllers\AdminController.cs" />
-
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserProfilesController.cs" />
