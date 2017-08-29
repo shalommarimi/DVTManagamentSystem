@@ -23,9 +23,10 @@ namespace DVTManagementSystem.Controllers.Account
             return View(_resetPasswordmodel);
         }
 
+
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+       // [ValidateAntiForgeryToken]
         public ActionResult ResetPassword ( ResetPasswordModel _resetPasswordmodel)
         {
             if (ModelState.IsValid)
