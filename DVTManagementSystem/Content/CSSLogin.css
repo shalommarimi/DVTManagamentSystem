@@ -53,8 +53,8 @@
     margin-top:20px;
     font-family: Arial;
     color: #000;
-    box-shadow: 10px 14px -7px #ffd800;
+    box-shadow: 10px 14px -7px #0026ff;
     background: -webkit-linear-gradient(90deg, #000 5%, white 100%);
-    background: -moz-linear-gradient(90deg, #DDD 5%, white 100%);
-    background: -o-linear-gradient(90deg, #DDD 5%, #000 100%);
+    background: -moz-linear-gradient(90deg, #ffd800 5%, white 100%);
+    background: -o-linear-gradient(90deg, #ffd800 5%, #000 100%);
 }
