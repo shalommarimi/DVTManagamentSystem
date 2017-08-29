@@ -35,7 +35,7 @@ namespace DVTManagementSystem.Controllers
 
                         Session["FirstName"] = user.FirstName.ToString();
                         Session["LastName"] = user.FirstName.ToString();
-                        return RedirectToAction("UserProfiles", "UserProfile");
+                        return RedirectToAction("UserProfile", "UserProfiles");
 
                     }
 
@@ -43,6 +43,7 @@ namespace DVTManagementSystem.Controllers
                 catch (System.Exception)
                 {
                     ViewBag.Error = "Username or Password is incorrect";
+                    return View();
 
                 }
             }
