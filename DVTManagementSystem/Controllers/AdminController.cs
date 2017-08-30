@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Net;
 
+
 namespace DVTManagementSystem.Controllers
 {
     public class AdminController : Controller
@@ -43,6 +44,7 @@ namespace DVTManagementSystem.Controllers
 
                 DVTcontext.Entry(user).State = EntityState.Modified;
                 DVTcontext.SaveChanges();
+                
 
                 return RedirectToAction("UserList");
             }

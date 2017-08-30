@@ -126,6 +126,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AdminStyle.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -173,9 +174,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708220854546_initial.cs" />
-    <Compile Include="Migrations\201708220854546_initial.Designer.cs">
-      <DependentUpon>201708220854546_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201708250707288_nini.cs" />
+    <Compile Include="Migrations\201708250707288_nini.Designer.cs">
+      <DependentUpon>201708250707288_nini.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -237,8 +238,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708220854546_initial.resx">
-      <DependentUpon>201708220854546_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708250707288_nini.resx">
+      <DependentUpon>201708250707288_nini.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
