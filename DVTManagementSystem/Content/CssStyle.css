@@ -3,6 +3,7 @@ body {margin:20px;
 }
 html{
     background: url(DSC_0186.jpg);
+    opacity: 0.5;
     background-size: cover;
     font-family:'Times New Roman', Times, serif;
 }
