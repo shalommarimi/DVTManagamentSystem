@@ -30,6 +30,7 @@ namespace DVTManagementSystem.Controllers.Account
        /// [ValidateAntiForgeryToken]
         public ActionResult LostPassword(LostPasswordModel _LostPasswordmodel)
         {
+
             if (ModelState.IsValid)
             {
                 MembershipUser user;
@@ -37,7 +38,7 @@ namespace DVTManagementSystem.Controllers.Account
                 using (var _userProfileDBContext = new DVTManagementSystemContext())
                 {
                     var _ExistUser = (from x in _userProfileDBContext.UserProfiles
-                                      where x.EmailAddress == _LostPasswordmodel.email
+                                      where x.EmailAddress == _LostPasswordmodel.EmailAddress
                                       select x.FirstName).FirstOrDefault();
                     if (_ExistUser != null)
                     {
@@ -62,7 +63,7 @@ namespace DVTManagementSystem.Controllers.Account
                         string body = "Click the link to reset the password";
                         string from = "dvtdonotreply@gmail.com";
 
-                        MailMessage _messages = new MailMessage(from, _LostPasswordmodel.email);
+                        MailMessage _messages = new MailMessage(from, _LostPasswordmodel.EmailAddress);
                         _messages.Subject = subject;
                         _messages.Body = body;
                         _messages.IsBodyHtml = true;

@@ -16,7 +16,7 @@ namespace DVTManagementSystem.Models.AccountModel
         [Required(ErrorMessage ="Please enter your email address to receive the reset password link")]
         [Display(Name ="Your email address")]
         [EmailAddress(ErrorMessage ="Not a valid email address")]
-        public string email { get; set; }
+        public string EmailAddress { get; set; }
 
     }
 }

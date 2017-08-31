@@ -1,10 +1,12 @@
-﻿
+﻿$(document).ready(function () {
+
+});
 function openPopup() {
-    document.getElementById("Forgotpass").style.display = "block";
+    document.getElementById("Popup_bg").style.display = "block";
 }
 
 function ClosePopup() {
-    document.getElementById('PopupPage').style.display = 'none';
+    document.getElementById('Popup_bg').style.display = 'none';
 }
 
 
