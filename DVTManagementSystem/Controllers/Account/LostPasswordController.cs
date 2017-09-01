@@ -45,12 +45,8 @@ namespace DVTManagementSystem.Controllers.Account
 
                         user = Membership.GetUser(_ExistUser.ToString());
                     }
-                    else
-                    {
-                        user = null;
-                    }
                     //Generating the password token for User
-                    if (user != null)
+                    if (_ExistUser != null)
                     {
                         
                         var token=WebSecurity.GeneratePasswordResetToken(user.UserName);
