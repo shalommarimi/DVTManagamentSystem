@@ -20,7 +20,7 @@ namespace DVTManagementSystem.App_Start
 		public static void Initialize()
 		{
 			// Modify the settings below as appropriate for your application
-			WebSecurity.InitializeDatabaseConnection(connectionStringName: "DVTManagementSystemContext", userTableName: "Users", userIdColumn: "ID", userNameColumn: "Username", autoCreateTables: true);
+			WebSecurity.InitializeDatabaseConnection(connectionStringName: "DVTManagementSystemContext", userTableName: "UserProfile", userIdColumn: "UserProfileId", userNameColumn: "EmailAddress", autoCreateTables: true);
 			
 			// Comment the line above and uncomment these lines to use the IWebSecurityService abstraction
 			//var webSecurityService = DependencyResolver.Current.GetService<IWebSecurityService>();

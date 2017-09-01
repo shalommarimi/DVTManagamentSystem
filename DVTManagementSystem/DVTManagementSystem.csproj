@@ -179,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-
     <Compile Include="App_Start\SimpleMembershipMvc3.cs" />
     <Compile Include="Controllers\Account\LostPasswordController.cs" />
     <Compile Include="Controllers\Account\ResetPasswordController.cs" />
@@ -190,9 +189,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708220854546_initial.cs" />
-    <Compile Include="Migrations\201708220854546_initial.Designer.cs">
-      <DependentUpon>201708220854546_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201709010928304_security.cs" />
+    <Compile Include="Migrations\201709010928304_security.Designer.cs">
+      <DependentUpon>201709010928304_security.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel\LostPasswordModel.cs" />
@@ -238,18 +237,14 @@
     <Content Include="Views\Admin\Details.cshtml" />
     <Content Include="Views\Admin\Delete.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
-
-
-    <Content Include="Views\LostPassword\LostPassword.cshtml" />
-    <Content Include="Views\LostPassword\LostPassword.cshtml" />
     <Content Include="Views\ResetPassword\ResetPassword.cshtml" />
-
     <Content Include="Views\UserProfiles\Create.cshtml" />
     <Content Include="Views\UserProfiles\Delete.cshtml" />
     <Content Include="Views\UserProfiles\Details.cshtml" />
     <Content Include="Views\UserProfiles\Edit.cshtml" />
     <Content Include="Views\UserProfiles\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\LostPassword\LostPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -265,8 +260,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708220854546_initial.resx">
-      <DependentUpon>201708220854546_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709010928304_security.resx">
+      <DependentUpon>201709010928304_security.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

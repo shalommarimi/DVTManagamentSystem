@@ -11,7 +11,7 @@ using DVTManagementSystem.Models.Context;
 using System.Web.Security;
 using System.Net.Mail;
 using WebMatrix.WebData;
-
+using System.Text;
 
 namespace DVTManagementSystem.Controllers.Account
 {
@@ -27,67 +27,87 @@ namespace DVTManagementSystem.Controllers.Account
 
         [HttpPost]
         [AllowAnonymous]
-       /// [ValidateAntiForgeryToken]
+        /// [ValidateAntiForgeryToken]
         public ActionResult LostPassword(LostPasswordModel _LostPasswordmodel)
         {
-
-            if (ModelState.IsValid)
+            //Checking if the userEmail exist
+            using (var _userProfileDBContext = new DVTManagementSystemContext())
             {
-                MembershipUser user;
-                //Checking if the userEmail exist
-                using (var _userProfileDBContext = new DVTManagementSystemContext())
+                //var _ExistUser = (from x in _userProfileDBContext.UserProfiles
+                //                where x.EmailAddress == _LostPasswordmodel.EmailAddress
+                //                 select x).FirstOrDefault();
+
+                if (!WebSecurity.UserExists(_LostPasswordmodel.EmailAddress))
                 {
-                    var _ExistUser = (from x in _userProfileDBContext.UserProfiles
-                                      where x.EmailAddress == _LostPasswordmodel.EmailAddress
-                                      select x.FirstName).FirstOrDefault();
-                    if (_ExistUser != null)
-                    {
+                    WebSecurity.CreateUserAndAccount(_LostPasswordmodel.EmailAddress, "12345");
+                }
+                //Generating the password token for User
+                if (WebSecurity.UserExists(_LostPasswordmodel.EmailAddress))
+                {
+                    var token = WebSecurity.GeneratePasswordResetToken(_LostPasswordmodel.EmailAddress);
 
-                        user = Membership.GetUser(_ExistUser.ToString());
-                    }
-                    else
-                    {
-                        user = null;
-                    }
-                    //Generating the password token for User
-                    if (user != null)
-                    {
-                        
-                        var token=WebSecurity.GeneratePasswordResetToken(user.UserName);
+                    //generating the link for reset password
+                    string resetPasswordLink = "<a href='" + Url.Action("ResetPassword", "Account", new { reset = token }, "https") + "'>Reset Password Link <a/>";
+
+                    StringBuilder stringbuilder = new StringBuilder();
+                    string subject = "Reset your password DVT management system";
+                    string from = "dvtdonotreply@gmail.com";
+
+                    MailMessage _messages = new MailMessage(from, _LostPasswordmodel.EmailAddress);
+                    _messages.Subject = subject;
+                    stringbuilder.Append("Hi " + "<br></br>");
+                    stringbuilder.Append("<br></br>" + "Click the link to reset the password" +" " + resetPasswordLink+"");
+                    _messages.Body = stringbuilder.ToString();
+                  
+                    _messages.IsBodyHtml = true;
+
+                    SmtpClient _client = new SmtpClient();
+                    _client.Host = "smtp.gmail.com";
+                    _client.Port = 587;
+
+                    _client.UseDefaultCredentials = false;
+                    _client.Credentials = new System.Net.NetworkCredential
+                    ("dvtdonotreply@gmail.com", "March2017!@#");
+                    _client.EnableSsl = true;
+
+                    _client.Send(_messages);
 
 
-                        //generating the link for reset password
-                        string resetPasswordLink = "<a href='" + Url.Action("ResetPassword", "Account", new { reset = token }, "https") + "'>Reset Password Link <a/>";
-
-                        string subject = "Reset your password DVT management system";
-                        string body = "Click the link to reset the password";
-                        string from = "dvtdonotreply@gmail.com";
-
-                        MailMessage _messages = new MailMessage(from, _LostPasswordmodel.EmailAddress);
-                        _messages.Subject = subject;
-                        _messages.Body = body;
-                        _messages.IsBodyHtml = true;
-                        SmtpClient _client = new SmtpClient();
-                        try
-                        {
-                            _client.Send(_messages);
-                        }
-                        catch (Exception ex)
-                        {
-
-                            ModelState.AddModelError("", "Have issues sending email:" + ex.Message);
-                        }
-                    }
-
-                    else
-                    {
-                        ModelState.AddModelError("", "No user found by that email:");
-                    }
 
                 }
 
+
+                return View(_LostPasswordmodel);
             }
-            return View(_LostPasswordmodel);
+        }
+
+        public class UserProfile
+        {
+            public int UserProfileId { get; set; }
+
+            public string FirstName { get; set; }
+
+            public string LastName { get; set; }
+
+            public string IdentityNumber { get; set; }
+
+            public string DateOfBirth { get; set; }
+
+            public int GenderTypeId { get; set; }
+
+            public int UserTypeId { get; set; }
+
+            public string PhoneNumber { get; set; }
+
+            public string EmailAddress { get; set; }
+
+            public string PasswordHash { get; set; }
+
+            public int DepartmentId { get; set; }
+
+            public bool IsApproved { get; set; }
+
+            public static string PasswordHashing { get; internal set; }
         }
     }
 }
