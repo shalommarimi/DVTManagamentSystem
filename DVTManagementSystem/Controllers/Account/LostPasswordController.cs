@@ -56,7 +56,7 @@ namespace DVTManagementSystem.Controllers.Account
 
                     try
                     {
-                        string resetPasswordLink = "<a href='" + Url.Action("ResetPassword", "Account", new { reset = token,id =_LostPasswordmodel.UserId}, "https") + "'>Reset Password Link <a/>";
+                        string resetPasswordLink = "<a href='" + Url.Action("ResetPassword", "ResetPassword", new { reset = token,id =_LostPasswordmodel.UserId}, "http:/localhost:51927") + "'>Reset Password Link <a/>";
 
                         StringBuilder stringbuilder = new StringBuilder();
                         string subject = "Reset your password DVT management system";

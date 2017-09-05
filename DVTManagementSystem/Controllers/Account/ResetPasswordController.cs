@@ -15,6 +15,7 @@ namespace DVTManagementSystem.Controllers.Account
     public class ResetPasswordController : Controller
     {
 
+        //[Route("ResetPassword/ResetPassword/id/resettoken")]
         DVTManagementSystemContext db = new DVTManagementSystemContext();
         // GET: ResetPassword
         [HttpGet]
