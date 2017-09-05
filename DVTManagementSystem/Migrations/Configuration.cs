@@ -5,7 +5,7 @@ namespace DVTManagementSystem.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DVTManagementSystem.Models.Context.DVTManagementSystemContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Models.Context.DVTManagementSystemContext>
     {
         public Configuration()
         {
