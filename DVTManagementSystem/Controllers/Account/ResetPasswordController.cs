@@ -22,13 +22,14 @@ namespace DVTManagementSystem.Controllers.Account
 
             return View(_resetPasswordmodel);
         }
-
+        
 
         [HttpPost]
         [AllowAnonymous]
        // [ValidateAntiForgeryToken]
         public ActionResult ResetPassword ( ResetPasswordModel _resetPasswordmodel)
         {
+            //DVTManagementSystem resetdbContext = new DVTManagementSystem();
             if (ModelState.IsValid)
             {
                 
