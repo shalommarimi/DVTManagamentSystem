@@ -11,7 +11,8 @@ namespace DVTManagementSystem.Models.AccountModel
 {
     public class ResetPasswordModel
     {
-         [Required]
+        public int userId { get; set; }
+        [Required]
          [Display(Name ="New Password")]
          [DataType(DataType.Password)]
          public string Password { get; set; }
@@ -19,7 +20,7 @@ namespace DVTManagementSystem.Models.AccountModel
         [Required]
         [Display(Name ="Confirm Password")]
         [DataType(DataType.Password)] 
-        [Compare("Password",ErrorMessage ="Password does not match with the new Password")] 
+        [Compare("Password", ErrorMessage ="Password does not match with the new Password")] 
          public string ConfirmPassword { get; set; }
 
         [Required]

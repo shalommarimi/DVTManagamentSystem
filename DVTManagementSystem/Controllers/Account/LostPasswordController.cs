@@ -30,6 +30,7 @@ namespace DVTManagementSystem.Controllers.Account
         /// [ValidateAntiForgeryToken]
         public ActionResult LostPassword(LostPasswordModel _LostPasswordmodel)
         {
+            
             //Checking if the userEmail exist
             using (var _userProfileDBContext = new DVTManagementSystemContext())
             {
@@ -37,48 +38,61 @@ namespace DVTManagementSystem.Controllers.Account
                 //                where x.EmailAddress == _LostPasswordmodel.EmailAddress
                 //                 select x).FirstOrDefault();
 
+                
+
                 if (!WebSecurity.UserExists(_LostPasswordmodel.EmailAddress))
                 {
                     WebSecurity.CreateUserAndAccount(_LostPasswordmodel.EmailAddress, "12345");
                 }
                 //Generating the password token for User
+
+                _LostPasswordmodel.UserId = _userProfileDBContext.UserProfiles.Where(y => y.EmailAddress == _LostPasswordmodel.EmailAddress)
+                                                                              .Select(x => x.UserProfileId)
+                                                                              .FirstOrDefault();
+
                 if (WebSecurity.UserExists(_LostPasswordmodel.EmailAddress))
                 {
                     var token = WebSecurity.GeneratePasswordResetToken(_LostPasswordmodel.EmailAddress);
 
+                    try
+                    {
+                        string resetPasswordLink = "<a href='" + Url.Action("ResetPassword", "Account", new { reset = token,id =_LostPasswordmodel.UserId}, "https") + "'>Reset Password Link <a/>";
+
+                        StringBuilder stringbuilder = new StringBuilder();
+                        string subject = "Reset your password DVT management system";
+                        string from = "dvtdonotreply@gmail.com";
+
+                        MailMessage _messages = new MailMessage(from, _LostPasswordmodel.EmailAddress);
+                        _messages.Subject = subject;
+                        stringbuilder.Append("Hi " + "<br></br>");
+                        stringbuilder.Append("<br></br>" + "Click the link to reset the password" + " " + resetPasswordLink + "");
+                        _messages.Body = stringbuilder.ToString();
+
+                        _messages.IsBodyHtml = true;
+
+                        SmtpClient _client = new SmtpClient();
+                        _client.Host = "smtp.gmail.com";
+                        _client.Port = 587;
+
+                        _client.UseDefaultCredentials = false;
+                        _client.Credentials = new System.Net.NetworkCredential
+                        ("dvtdonotreply@gmail.com", "March2017!@#");
+                        _client.EnableSsl = true;
+
+                        _client.Send(_messages);
+
+                        ViewBag.Message = "email has been sent";
+                    }
+                    catch (Exception)
+                    {
+
+                        ViewBag.Message = "Problem occured while email was trying to be sent";
+                    }
                     //generating the link for reset password
-                    string resetPasswordLink = "<a href='" + Url.Action("ResetPassword", "Account", new { reset = token }, "https") + "'>Reset Password Link <a/>";
-
-                    StringBuilder stringbuilder = new StringBuilder();
-                    string subject = "Reset your password DVT management system";
-                    string from = "dvtdonotreply@gmail.com";
-
-                    MailMessage _messages = new MailMessage(from, _LostPasswordmodel.EmailAddress);
-                    _messages.Subject = subject;
-                    stringbuilder.Append("Hi " + "<br></br>");
-                    stringbuilder.Append("<br></br>" + "Click the link to reset the password" +" " + resetPasswordLink+"");
-                    _messages.Body = stringbuilder.ToString();
-                  
-                    _messages.IsBodyHtml = true;
-
-                    SmtpClient _client = new SmtpClient();
-                    _client.Host = "smtp.gmail.com";
-                    _client.Port = 587;
-
-                    _client.UseDefaultCredentials = false;
-                    _client.Credentials = new System.Net.NetworkCredential
-                    ("dvtdonotreply@gmail.com", "March2017!@#");
-                    _client.EnableSsl = true;
-
-                    _client.Send(_messages);
-
-
-
                 }
 
-
-                return View(_LostPasswordmodel);
             }
+            return View();
         }
 
         public class UserProfile

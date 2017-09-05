@@ -8,18 +8,21 @@ using DVTManagementSystem.Models.AccountModel;
 using System.Net.Security;
 using System.Web.Mail;
 using WebMatrix.WebData;
+using DVTManagementSystem.Models.Context;
 
 namespace DVTManagementSystem.Controllers.Account
 {
     public class ResetPasswordController : Controller
     {
+
+        DVTManagementSystemContext db = new DVTManagementSystemContext();
         // GET: ResetPassword
         [HttpGet]
-        public ActionResult ResetPassword( string resettoken)
+        public ActionResult ResetPassword( string resettoken, int id)
         {
             ResetPasswordModel _resetPasswordmodel = new ResetPasswordModel();
             _resetPasswordmodel.ReturnToken = resettoken;
-
+            _resetPasswordmodel.userId = id;
             return View(_resetPasswordmodel);
         }
 
@@ -35,8 +38,13 @@ namespace DVTManagementSystem.Controllers.Account
                 bool response = WebSecurity.ResetPassword(_resetPasswordmodel.ReturnToken, _resetPasswordmodel.Password);
                 if (response)
                 {
+                    var user = db.UserProfiles.Find(_resetPasswordmodel.userId);
+                    user.ConfirmPasswordHash = _resetPasswordmodel.Password;
+
+                    db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
                     ViewBag.Message = "Succesfully changed the password";
-                }
+                } 
                 else
                 {
                     ViewBag.Message = "Password change was unsuccesful";
