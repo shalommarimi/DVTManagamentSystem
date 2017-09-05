@@ -17,23 +17,25 @@ namespace DVTManagementSystem.Controllers.Account
 
         //[Route("ResetPassword/ResetPassword/id/resettoken")]
         DVTManagementSystemContext db = new DVTManagementSystemContext();
+
         // GET: ResetPassword
         [HttpGet]
-        public ActionResult ResetPassword( string resettoken, int id)
+        public ActionResult ResetPassword(string reset, int id)
         {
             ResetPasswordModel _resetPasswordmodel = new ResetPasswordModel();
-            _resetPasswordmodel.ReturnToken = resettoken;
+            _resetPasswordmodel.ReturnToken = reset;
             _resetPasswordmodel.userId = id;
             return View(_resetPasswordmodel);
         }
-        
+
 
         [HttpPost]
-        [AllowAnonymous]
-       // [ValidateAntiForgeryToken]
-        public ActionResult ResetPassword ( ResetPasswordModel _resetPasswordmodel)
+        //[AllowAnonymous]
+        // [ValidateAntiForgeryToken]
+        public ActionResult ResetPassword([Bind(Include = "userId,Password,ConfirmPassword,ReturnToken")] ResetPasswordModel _resetPasswordmodel)
         {
-            //DVTManagementSystem resetdbContext = new DVTManagementSystem();
+            //_resetPasswordmodel.ReturnToken = resetPasswordmodel.ReturnToken;
+            //_resetPasswordmodel.userId = resetPasswordmodel.userId;
             if (ModelState.IsValid)
             {
                 
@@ -52,7 +54,7 @@ namespace DVTManagementSystem.Controllers.Account
                     ViewBag.Message = "Password change was unsuccesful";
               }
             }
-            return View(_resetPasswordmodel);
+            return View();
 
            
         }
