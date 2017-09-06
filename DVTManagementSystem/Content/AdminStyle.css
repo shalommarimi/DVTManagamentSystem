@@ -1,18 +1,75 @@
 ﻿
+body{
+    background-image:url('crowd (1) another.jpg');
+     background-size: cover;
+    font-family:'Times New Roman', Times, serif;
+}
+.butt {
+   border: 1px outset grey;
+   background-color: ghostwhite;
+   height:35px;
+   width:135px;
+   cursor:pointer;
+   text-decoration:double;
+   text-align:center;
+}
+
+.butt:hover {
+   background-color: lightgrey;
+   color:white;
+}
+
+.Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:darkgray;
+}
+
+
+.img{
+  display: block;
+  padding-left:200px;
+
+
+}
+form-horizontal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 table.center {
 
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color:black;
+    color:white;
     margin-left:auto; 
     margin-right:auto;
     border-collapse: collapse;
+    border-color:antiquewhite;
     
   }
 th, td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    border-bottom-left-radius:1px;
 }
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+    width:70%;
+}
+h1 {
+    text-align: center;
+    color:antiquewhite;
+    font-family:'Cambria Math';
+}
+hr.style2{
+	border-top: 1px solid #8c8b8b;
+    width:20%;
+}
+
  dl {
     
   padding-left: 650px;
@@ -20,10 +77,10 @@ th, td {
   dt {
     float: left;
     clear: left;
-    /*width: 100px;*/
+    width: 100px;
     text-align: center;
     font-weight: bold;
-    color:black;
+    color:white;
   }
   dt::after {
     content: ":";
@@ -35,4 +92,6 @@ th, td {
   p{
       align-content:flex-end;
   }
+  
+ 
  
