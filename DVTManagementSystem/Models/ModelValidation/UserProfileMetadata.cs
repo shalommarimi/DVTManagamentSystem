@@ -21,7 +21,7 @@ namespace DVTManagementSystem.Models.ModelValidation
 
         [Required]
         public int GenderTypeId { get; set; }
-
+      
         public int UserTypeId { get; set; }
 
         [Required ]

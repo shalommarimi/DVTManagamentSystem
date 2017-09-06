@@ -6,14 +6,14 @@ namespace DVTManagementSystem.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class initial : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class security1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(security1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201708220854546_initial"; }
+            get { return "201709061152228_security1"; }
         }
         
         string IMigrationMetadata.Source
