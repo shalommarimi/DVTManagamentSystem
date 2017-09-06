@@ -260,6 +260,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\LostPassword\LostPassword.cshtml" />
     <Content Include="Views\ResetPassword\ResetPasswordResponse.cshtml" />
+    <Content Include="Views\ResetPassword\ResetResponse.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
