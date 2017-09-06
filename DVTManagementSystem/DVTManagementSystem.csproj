@@ -207,6 +207,14 @@
     <Compile Include="Migrations\201709010928304_security.Designer.cs">
       <DependentUpon>201709010928304_security.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709061150259_Seed2.cs" />
+    <Compile Include="Migrations\201709061150259_Seed2.Designer.cs">
+      <DependentUpon>201709061150259_Seed2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709061152228_security1.cs" />
+    <Compile Include="Migrations\201709061152228_security1.Designer.cs">
+      <DependentUpon>201709061152228_security1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel\LostPasswordModel.cs" />
     <Compile Include="Models\AccountModel\ResetPasswordModel.cs" />
@@ -278,6 +286,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709010928304_security.resx">
       <DependentUpon>201709010928304_security.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061150259_Seed2.resx">
+      <DependentUpon>201709061150259_Seed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061152228_security1.resx">
+      <DependentUpon>201709061152228_security1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
