@@ -32,7 +32,8 @@ namespace DVTManagementSystem.Controllers.Account
         [HttpPost]
         //[AllowAnonymous]
         // [ValidateAntiForgeryToken]
-        public ActionResult ResetPassword([Bind(Include = "userId,Password,ConfirmPassword,ReturnToken")] ResetPasswordModel _resetPasswordmodel)
+        //[Bind(Include = "userId,Password,ConfirmPassword,ReturnToken")]
+        public ActionResult ResetPassword( ResetPasswordModel _resetPasswordmodel)
         {
             //_resetPasswordmodel.ReturnToken = resetPasswordmodel.ReturnToken;
             //_resetPasswordmodel.userId = resetPasswordmodel.userId;
@@ -54,7 +55,7 @@ namespace DVTManagementSystem.Controllers.Account
                     ViewBag.Message = "Password change was unsuccesful";
               }
             }
-            return View();
+            return View("ResetPasswordResponse", ViewBag.Message);
 
            
         }
