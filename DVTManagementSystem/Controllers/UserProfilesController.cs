@@ -111,7 +111,7 @@ namespace DVTManagementSystem.Controllers
             {
                 db.Entry(userProfile).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details");
             }
             ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentName", userProfile.DepartmentId);
             ViewBag.GenderTypeId = new SelectList(db.Genders, "GenderId", "GenderType", userProfile.GenderTypeId);
