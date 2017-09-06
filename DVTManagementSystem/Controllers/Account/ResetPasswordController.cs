@@ -17,7 +17,7 @@ namespace DVTManagementSystem.Controllers.Account
 
         //[Route("ResetPassword/ResetPassword/id/resettoken")]
         DVTManagementSystemContext db = new DVTManagementSystemContext();
-
+       
         // GET: ResetPassword
         [HttpGet]
         public ActionResult ResetPassword(string reset,int id)
@@ -30,35 +30,51 @@ namespace DVTManagementSystem.Controllers.Account
 
 
         [HttpPost]
+
         //[AllowAnonymous]
         // [ValidateAntiForgeryToken]
         //[Bind(Include = "userId,Password,ConfirmPassword,ReturnToken")]
-        public ActionResult ResetPassword( ResetPasswordModel _resetPasswordmodel,LostPasswordModel _lostPassword)
+      
+
+        public ActionResult ResetPassword(ResetPasswordModel _resetPasswordmodel)
+
         {
-            //_resetPasswordmodel.ReturnToken = resetPasswordmodel.ReturnToken;
-            //_resetPasswordmodel.userId = resetPasswordmodel.userId;
+            var message = "";
+           
             if (ModelState.IsValid)
             {
                 
                 bool response = WebSecurity.ResetPassword(_resetPasswordmodel.ReturnToken, _resetPasswordmodel.Password);
                 if (response)
                 {
-                    var user =db.UserProfiles.Find(_lostPassword.UserId);
+                    var user =db.UserProfiles.Find(_resetPasswordmodel.userId);
                     
                    user.ConfirmPasswordHash = _resetPasswordmodel.Password;
                    db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                    db.SaveChanges();
 
+
                     ViewBag.Message = "Succesfully changed the password";
+
+                    db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    message = "Succesfully changed the password";
+
                 } 
                 else
                 {
-                    ViewBag.Message = "Password change was unsuccesful";
+                    message = "Password change was unsuccesful";
               }
             }
-            return View("ResetPasswordResponse", ViewBag.Message);
+            return RedirectToAction("ResetResponse");
 
            
+        }
+
+        public ActionResult ResetResponse(string message)
+        {
+            ViewBag.Message = message;
+            return View();
         }
 
 
