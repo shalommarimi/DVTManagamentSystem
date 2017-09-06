@@ -1,7 +1,7 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
+
 
 <!DOCTYPE html>
 
@@ -9,6 +9,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title - DVT Management System</title>
+ feature/forgotPassword
     <link rel="stylesheet" href="~/Content/cssStyle.css" />
 
 
@@ -17,14 +18,20 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Scripts/PopUpFunction.js"></script>
+
+
+    <link rel="stylesheet " href="~/Content/SharedStyling.css" />
+
+ master
 </head>
 <body>
     <div class="topnav ">
-        <ul class="nav ">
+        <ul class="nav nav-tabs nav-justified ">
 
-            <li><a href="~/Home/Index" >Home</a></li>
-            <li><a href="~/UserProfiles/Create" >Register</a></li>
+            <li><a href="~/Home/Index">Home</a></li>
+            <li><a href="~/UserProfiles/Create">Register</a></li>
             <li><a href="~/Authentication/Login">Login</a></li>
+            <li><a href="~/UserProfiles/Edit">UpdateProfile</a></li>
         </ul>
     </div>
 
@@ -38,6 +45,7 @@
 
 
     @RenderBody()
+feature/forgotPassword
     <hr />
     <footer>
         <p>&copy; @DateTime.Now.Year - DVT Management System</p>
@@ -46,5 +54,13 @@
 
 
 
+
+    <div class="footers">
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - DVT Management System</p>
+        </footer>
+    </div>
+ master
 </body>
 </html>

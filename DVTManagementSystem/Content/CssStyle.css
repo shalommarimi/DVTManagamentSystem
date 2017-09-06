@@ -1,4 +1,5 @@
-﻿
+feature/forgotPassword
+
 body {margin:20px;
 }
 html{
@@ -47,10 +48,14 @@ font-size: 30px;
 }
 
 .container {
+
+.container {
+master
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+ feature/forgotPassword
 }
 .img-responsive {
   display: block;
@@ -83,6 +88,8 @@ font-size: 30px;
     top:50%;
     margin-top:-250px;
      
+
+}
 
 }
 
