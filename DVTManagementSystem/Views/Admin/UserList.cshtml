@@ -26,6 +26,7 @@
 <h1> A D M I N </h1>
 
 <hr class="style2">
+<br />
 
     <table class="center">
         <tr>
@@ -37,9 +38,7 @@
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
 
-            <th>
-                @Html.DisplayNameFor(model => model.IsApproved)
-            </th>
+           
             <th></th>
         </tr>
 
@@ -52,16 +51,14 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.LastName)
                 </td>
-                <td>
-
-                    @Html.DisplayFor(modelItem => item.IsApproved)
-                </td>
+                
                 <td>
                     @Html.ActionLink("UpdateUser", "ApprovedUser", new { id = item.UserProfileId }) |
                     @Html.ActionLink("Details", "Details", new { id = item.UserProfileId }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.UserProfileId })
                 </td>
             </tr>
+            <br />
         }
 
     </table>
