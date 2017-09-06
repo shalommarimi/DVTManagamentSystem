@@ -20,11 +20,11 @@ namespace DVTManagementSystem.Controllers.Account
 
         // GET: ResetPassword
         [HttpGet]
-        public ActionResult ResetPassword(string reset, int id)
+        public ActionResult ResetPassword(string reset,int id)
         {
             ResetPasswordModel _resetPasswordmodel = new ResetPasswordModel();
             _resetPasswordmodel.ReturnToken = reset;
-            _resetPasswordmodel.userId = id;
+           _resetPasswordmodel.userId = id;
             return View(_resetPasswordmodel);
         }
 
@@ -33,7 +33,7 @@ namespace DVTManagementSystem.Controllers.Account
         //[AllowAnonymous]
         // [ValidateAntiForgeryToken]
         //[Bind(Include = "userId,Password,ConfirmPassword,ReturnToken")]
-        public ActionResult ResetPassword( ResetPasswordModel _resetPasswordmodel)
+        public ActionResult ResetPassword( ResetPasswordModel _resetPasswordmodel,LostPasswordModel _lostPassword)
         {
             //_resetPasswordmodel.ReturnToken = resetPasswordmodel.ReturnToken;
             //_resetPasswordmodel.userId = resetPasswordmodel.userId;
@@ -43,11 +43,12 @@ namespace DVTManagementSystem.Controllers.Account
                 bool response = WebSecurity.ResetPassword(_resetPasswordmodel.ReturnToken, _resetPasswordmodel.Password);
                 if (response)
                 {
-                    var user = db.UserProfiles.Find(_resetPasswordmodel.userId);
-                    user.ConfirmPasswordHash = _resetPasswordmodel.Password;
+                    var user =db.UserProfiles.Find(_lostPassword.UserId);
+                    
+                   user.ConfirmPasswordHash = _resetPasswordmodel.Password;
+                   db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                   db.SaveChanges();
 
-                    db.Entry(user).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
                     ViewBag.Message = "Succesfully changed the password";
                 } 
                 else
