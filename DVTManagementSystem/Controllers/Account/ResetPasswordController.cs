@@ -51,7 +51,7 @@ namespace DVTManagementSystem.Controllers.Account
                     message = "Password change was unsuccesful";
               }
             }
-            return RedirectToAction("ResetResponse");
+            return RedirectToAction("ResetResponse",new {message });
 
            
         }
