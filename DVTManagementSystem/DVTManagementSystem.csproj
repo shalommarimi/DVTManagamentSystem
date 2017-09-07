@@ -162,6 +162,7 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\cssStyle.css" />
     <Content Include="Content\DSC_0186.jpg" />
+
     <Content Include="Content\SharedStyling.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\StyleSheet1.css" />
