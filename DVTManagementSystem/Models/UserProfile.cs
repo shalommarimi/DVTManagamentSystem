@@ -36,6 +36,8 @@ namespace DVTManagementSystem.Models
         [Display(Name ="Approve")]
         public bool IsApproved { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         public virtual Gender Gender { get; set; }
 
         public virtual UserType UserType { get; set; }

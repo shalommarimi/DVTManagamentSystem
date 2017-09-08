@@ -20,28 +20,29 @@ namespace DVTManagementSystem.Controllers
         // GET: Admin
         public ActionResult UserList()
         {
-            var users = DVTcontext.UserProfiles.ToList();
+            var users = DVTcontext.UserProfiles.Where(d => d.IsDeleted == false).ToList();
             return View(users);
         }
         // GET: Users/Approved 
         public ActionResult ApprovedUser(int id)
         {
-            var UserUpdate = DVTcontext.UserProfiles.Where(u => u.UserProfileId == id).FirstOrDefault();
-            return View(UserUpdate);
+           
+            var User = DVTcontext.UserProfiles.Where(u => u.UserProfileId == id).FirstOrDefault();
+            ViewBag.DepartmentId = new SelectList(DVTcontext.Departments, "DepartmentId", "DepartmentName", User.DepartmentId);
+            ViewBag.GenderTypeId = new SelectList(DVTcontext.Genders, "GenderId", "GenderType", User.GenderTypeId);
+            ViewBag.UserTypeId = new SelectList(DVTcontext.UserTypes, "UserTypeId", "UserRole",User.UserTypeId);
+            return View(User);
         }
 
         // POST: Approving users / editing user status 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ApprovedUser([Bind(Include = "UserId,FirstName,LastName,Status")] UserProfile user)
+        public ActionResult ApprovedUser(UserProfile user)
         {
             if (ModelState.IsValid)
             {
-
-                //update feilds 
-                user.FirstName = user.FirstName;
-                user.LastName = user.LastName;
-
+                //update fields 
+   
                 DVTcontext.Entry(user).State = EntityState.Modified;
                 DVTcontext.SaveChanges();
                 
@@ -66,28 +67,22 @@ namespace DVTManagementSystem.Controllers
         }
 
         // GET: Users/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            var user = DVTcontext.UserProfiles.Where(u => u.UserProfileId == id).FirstOrDefault();
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
+          
+            return View();
         }
 
         // POST: Users/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public ActionResult DeleteUser(int id)
         {
             var us = DVTcontext.UserProfiles.Where(u => u.UserProfileId == id).FirstOrDefault();
-            DVTcontext.UserProfiles.Remove(us);
+
+            us.IsDeleted = true;
+            DVTcontext.Entry(us).State = EntityState.Modified;
             DVTcontext.SaveChanges();
+
             return RedirectToAction("UserList");
         }
 
