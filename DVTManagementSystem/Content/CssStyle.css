@@ -1,5 +1,5 @@
 ﻿
-body {margin:20px;
+body {margin :1px;
 }
 html{
     background: url(DSC_0186.jpg);
@@ -22,7 +22,7 @@ html{
   text-decoration: none;
  
 }
-.topnav a.active {
+.topnav  a :active {
     background-color: #4CAF50;
     color: white;
 }
