@@ -35,19 +35,19 @@ namespace DVTManagementSystem.Controllers
 
                         Session["FirstName"] = user.FirstName.ToString();
                         Session["LastName"] = user.FirstName.ToString();
-                        return RedirectToAction("Dashboard", "Applicant");
+                        return RedirectToAction("UserProfile", "UserProfiles");
 
                     }
-
 
                 }
                 catch (System.Exception)
                 {
-                    ModelState.AddModelError(string.Empty, "Username or Password is incorrect");
+                    ViewBag.Error = "Username or Password is incorrect";
+          
+
 
                 }
             }
-
 
             return View();
         }

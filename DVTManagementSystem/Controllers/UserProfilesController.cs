@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using DVTManagementSystem.Models;
+using DVTManagementSystem.Models.Context;
+using DVTManagementSystem.Services;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using DVTManagementSystem.Models;
-using DVTManagementSystem.Models.Context;
-using DVTManagementSystem.Services;
 
 namespace DVTManagementSystem.Controllers
 {
@@ -56,7 +52,10 @@ namespace DVTManagementSystem.Controllers
             return View();
         }
 
-
+        public ActionResult UserProfile()
+        {
+            return View();
+        }
 
 
         // POST: UserProfiles/Create
@@ -73,7 +72,7 @@ namespace DVTManagementSystem.Controllers
                 userProfile.PasswordHash = passwordHashing.HashInput(userProfile.PasswordHash);
                 db.UserProfiles.Add(userProfile);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("UserProfile");
             }
 
             ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentName", userProfile.DepartmentId);
@@ -111,7 +110,7 @@ namespace DVTManagementSystem.Controllers
             {
                 db.Entry(userProfile).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details");
             }
             ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentName", userProfile.DepartmentId);
             ViewBag.GenderTypeId = new SelectList(db.Genders, "GenderId", "GenderType", userProfile.GenderTypeId);
