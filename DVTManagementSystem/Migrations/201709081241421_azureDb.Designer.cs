@@ -7,13 +7,13 @@ namespace DVTManagementSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class security1 : IMigrationMetadata
+    public sealed partial class azureDb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(security1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(azureDb));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709061152228_security1"; }
+            get { return "201709081241421_azureDb"; }
         }
         
         string IMigrationMetadata.Source
