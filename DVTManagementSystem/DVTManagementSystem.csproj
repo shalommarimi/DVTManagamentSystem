@@ -213,6 +213,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
 
+    <Compile Include="Migrations\201709081241421_azureDb.cs" />
+    <Compile Include="Migrations\201709081241421_azureDb.Designer.cs"/>
     
 
     <Compile Include="Migrations\201709010928304_security.cs" />
