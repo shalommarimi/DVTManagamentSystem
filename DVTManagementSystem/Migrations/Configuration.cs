@@ -6,6 +6,7 @@ namespace DVTManagementSystem.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using WebMatrix.WebData;
 
     internal sealed class Configuration : DbMigrationsConfiguration<DVTManagementSystem.Models.Context.DVTManagementSystemContext>
     {
@@ -103,6 +104,10 @@ namespace DVTManagementSystem.Migrations
 
 
 
+        }
+        private void SeedMembership()
+        {
+            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfiles", "UserProfileId", "Email", autoCreateTables: true);
         }
     }
 }
