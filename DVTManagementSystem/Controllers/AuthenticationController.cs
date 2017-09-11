@@ -43,7 +43,8 @@ namespace DVTManagementSystem.Controllers
                 catch (System.Exception)
                 {
                     ViewBag.Error = "Username or Password is incorrect";
-                    return View();
+          
+
 
                 }
             }
