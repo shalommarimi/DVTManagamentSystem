@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>UserProfile</h4>
+<link href="~/Content/AdminStyle.css" rel="stylesheet" />
+
+    <h4 style="text-align:center;">UserProfile</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -99,8 +99,8 @@
         </dd>
 
     </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "ApprovedUser", new { id = Model.UserProfileId }) |
+
+<p style="align-self:center;">
+    @Html.ActionLink("Update", "ApprovedUser", new { id = Model.UserProfileId }) |
     @Html.ActionLink("Back to List", "UserList")
 </p>

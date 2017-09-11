@@ -92,6 +92,13 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.3\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -99,6 +106,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
@@ -152,6 +160,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AdminStyle.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -213,6 +222,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
 
+    <Compile Include="Migrations\201709081211593_sind.cs" />
+    <Compile Include="Migrations\201709081211593_sind.Designer.cs">
+      <DependentUpon>201709081211593_sind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709081345264_sin.cs" />
+    <Compile Include="Migrations\201709081345264_sin.Designer.cs">
+      <DependentUpon>201709081345264_sin.cs</DependentUpon>
     <Compile Include="Migrations\201709081241421_azureDb.cs" />
     <Compile Include="Migrations\201709081241421_azureDb.Designer.cs">
       <DependentUpon>201709081241421_azureDb.cs</DependentUpon>
@@ -233,7 +249,6 @@
     <Compile Include="Migrations\201709061152228_security1.cs" />
     <Compile Include="Migrations\201709061152228_security1.Designer.cs">
       <DependentUpon>201709061152228_security1.cs</DependentUpon>
-
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel\LostPasswordModel.cs" />
@@ -266,7 +281,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -275,9 +292,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Admin\UserList.cshtml" />
-    <Content Include="Views\Admin\ApprovedUser.cshtml" />
     <Content Include="Views\Admin\Details.cshtml" />
-    <Content Include="Views\Admin\Delete.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
     <Content Include="Views\ResetPassword\ResetPassword.cshtml" />
     <Content Include="Views\UserProfiles\Create.cshtml" />
@@ -286,12 +301,13 @@
     <Content Include="Views\UserProfiles\Edit.cshtml" />
     <Content Include="Views\UserProfiles\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-
+    <Content Include="Views\Admin\ApprovedUser.cshtml" />
+    <Content Include="Views\Admin\View.cshtml" />
     <Content Include="Views\UserProfiles\UserProfile.cshtml" />
-
     <Content Include="Views\LostPassword\LostPassword.cshtml" />
     <Content Include="Views\ResetPassword\ResetPasswordResponse.cshtml" />
     <Content Include="Views\ResetPassword\ResetResponse.cshtml" />
+
 
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -308,7 +324,11 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-
+    <EmbeddedResource Include="Migrations\201709081211593_sind.resx">
+      <DependentUpon>201709081211593_sind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081345264_sin.resx">
+      <DependentUpon>201709081345264_sin.cs</DependentUpon>
     <EmbeddedResource Include="Migrations\201709081241421_azureDb.resx">
       <DependentUpon>201709081241421_azureDb.cs</DependentUpon>
 
@@ -324,8 +344,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709061152228_security1.resx">
       <DependentUpon>201709061152228_security1.cs</DependentUpon>
-
-
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -343,7 +361,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51927</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51927/</IISUrl>
+          <IISUrl>http://localhost:51928/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
