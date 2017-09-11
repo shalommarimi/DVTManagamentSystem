@@ -19,6 +19,7 @@ body{
    color:white;
 }
 
+
 .Center {
   display: flex;
   align-items: center;
@@ -29,7 +30,7 @@ body{
 
 .img{
   display: block;
-  padding-left:200px;
+  padding-left:100px;
 
 
 }
@@ -52,7 +53,7 @@ table.center {
   }
 th, td {
     padding: 8px;
-    text-align: left;
+    text-align:center;
     border-bottom: 1px solid #ddd;
     border-bottom-left-radius:1px;
 }
@@ -72,15 +73,15 @@ hr.style2{
 
  dl {
     
-  padding-left: 650px;
+  /*padding-left: 650px;*/
   }
   dt {
     float: left;
     clear: left;
     width: 100px;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
-    color:white;
+    color:grey;
   }
   dt::after {
     content: ":";
@@ -92,6 +93,17 @@ hr.style2{
   p{
       align-content:flex-end;
   }
+ .collapse dt, dd{
+     color:black;
+      text-align:justify;
+         
+     
+ }
+ .collapse{
+     background-color:white;
+     width:-20px;
+    margin-left: -20px;
+ }
   
  
  

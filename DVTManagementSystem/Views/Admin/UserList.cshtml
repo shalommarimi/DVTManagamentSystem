@@ -5,16 +5,14 @@
     ViewBag.Title = "UserList";
 }
 
-@*<h2>UserList</h2>*@
+
 <link href="~/Content/AdminStyle.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="~/Scripts/PopUpFunction.js"></script>
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
+
 
 
 <div class="container ">
@@ -53,10 +51,11 @@
                     <a href="" data-toggle="modal" data-target="#myModal" data-id="@item.UserProfileId">Delete</a>
 
               <!--Collapsable-->
-                          <div class="collapse" id="collapseExample" style="background-color:white; color:black">
+                    <div class="Center">
+                          <div class="collapse" id="collapseExample">
                         <div class="card card-block">
                             <dl class="dl-horizontal">
-                                <dt >
+                                <dt>
                                     @Html.DisplayNameFor(model => model.Department.DepartmentName)
                                 </dt>
 
@@ -139,7 +138,7 @@
                             </dl>
                         </div>
                     </div>
-
+                        </div>
 
                     @using (Html.BeginForm("DeleteUser/" + @item.UserProfileId, "Admin", FormMethod.Post))
                     {

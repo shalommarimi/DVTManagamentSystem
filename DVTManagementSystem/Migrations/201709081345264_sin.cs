@@ -3,16 +3,16 @@ namespace DVTManagementSystem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class nini : DbMigration
+    public partial class sin : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.UserProfiles", "IsApproved", c => c.Boolean(nullable: false));
+            AddColumn("dbo.UserProfiles", "IsDeleted", c => c.Boolean(nullable: false));
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.UserProfiles", "IsApproved", c => c.Byte(nullable: false));
+            DropColumn("dbo.UserProfiles", "IsDeleted");
         }
     }
 }
