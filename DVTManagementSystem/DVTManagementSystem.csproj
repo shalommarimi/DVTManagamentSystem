@@ -213,6 +213,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
 
+    <Compile Include="Migrations\201709081241421_azureDb.cs" />
+    <Compile Include="Migrations\201709081241421_azureDb.Designer.cs">
+      <DependentUpon>201709081241421_azureDb.cs</DependentUpon>
+
+
     <Compile Include="Migrations\201708240727411_dbase.cs" />
     <Compile Include="Migrations\201708240727411_dbase.Designer.cs">
       <DependentUpon>201708240727411_dbase.cs</DependentUpon>
@@ -304,6 +309,10 @@
   </ItemGroup>
   <ItemGroup>
 
+    <EmbeddedResource Include="Migrations\201709081241421_azureDb.resx">
+      <DependentUpon>201709081241421_azureDb.cs</DependentUpon>
+
+
     <EmbeddedResource Include="Migrations\201708240727411_dbase.resx">
       <DependentUpon>201708240727411_dbase.cs</DependentUpon>
 
@@ -315,6 +324,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709061152228_security1.resx">
       <DependentUpon>201709061152228_security1.cs</DependentUpon>
+
 
     </EmbeddedResource>
   </ItemGroup>
