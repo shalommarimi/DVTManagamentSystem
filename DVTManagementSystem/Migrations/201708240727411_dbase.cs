@@ -3,14 +3,16 @@ namespace DVTManagementSystem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Seed2 : DbMigration
+    public partial class dbase : DbMigration
     {
         public override void Up()
         {
+            AlterColumn("dbo.UserProfiles", "IsApproved", c => c.Boolean(nullable: false));
         }
         
         public override void Down()
         {
+            AlterColumn("dbo.UserProfiles", "IsApproved", c => c.Byte(nullable: false));
         }
     }
 }

@@ -159,8 +159,13 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css" />
+
+    <Content Include="Content\CSSLogin.css" />
+    <Content Include="Content\CssStyle.css" />
+
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\cssStyle.css" />
+
     <Content Include="Content\DSC_0186.jpg" />
 
     <Content Include="Content\SharedStyling.css" />
@@ -207,6 +212,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+
+    <Compile Include="Migrations\201709081241421_azureDb.cs" />
+    <Compile Include="Migrations\201709081241421_azureDb.Designer.cs"/>
+      <DependentUpon>201709081241421_azureDb.cs</DependentUpon>
+
+
+    <Compile Include="Migrations\201708240727411_dbase.cs" />
+    <Compile Include="Migrations\201708240727411_dbase.Designer.cs"/>
+      <DependentUpon>201708240727411_dbase.cs</DependentUpon>
+
     <Compile Include="Migrations\201709010928304_security.cs" />
     <Compile Include="Migrations\201709010928304_security.Designer.cs">
       <DependentUpon>201709010928304_security.cs</DependentUpon>
@@ -218,6 +233,7 @@
     <Compile Include="Migrations\201709061152228_security1.cs" />
     <Compile Include="Migrations\201709061152228_security1.Designer.cs">
       <DependentUpon>201709061152228_security1.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel\LostPasswordModel.cs" />
@@ -270,9 +286,13 @@
     <Content Include="Views\UserProfiles\Edit.cshtml" />
     <Content Include="Views\UserProfiles\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+
+    <Content Include="Views\UserProfiles\UserProfile.cshtml" />
+
     <Content Include="Views\LostPassword\LostPassword.cshtml" />
     <Content Include="Views\ResetPassword\ResetPasswordResponse.cshtml" />
     <Content Include="Views\ResetPassword\ResetResponse.cshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -288,6 +308,14 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+
+    <EmbeddedResource Include="Migrations\201709081241421_azureDb.resx"/>
+      <DependentUpon>201709081241421_azureDb.cs</DependentUpon>
+
+
+    <EmbeddedResource Include="Migrations\201708240727411_dbase.resx"/>
+      <DependentUpon>201708240727411_dbase.cs</DependentUpon>
+
     <EmbeddedResource Include="Migrations\201709010928304_security.resx">
       <DependentUpon>201709010928304_security.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +324,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709061152228_security1.resx">
       <DependentUpon>201709061152228_security1.cs</DependentUpon>
+
+
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
