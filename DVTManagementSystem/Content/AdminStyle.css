@@ -72,7 +72,7 @@ hr.style2{
 }
 
  dl {
-    
+     
   /*padding-left: 650px;*/
   }
   dt {
@@ -94,16 +94,16 @@ hr.style2{
       align-content:flex-end;
   }
  .collapse dt, dd{
-     color:black;
-      text-align:justify;
+     color:antiquewhite;
+      /*text-align:justify;*/
          
      
  }
- .collapse{
+ /*.collapse{
      background-color:white;
      width:-20px;
     margin-left: -20px;
- }
+ }*/
   
  
  
