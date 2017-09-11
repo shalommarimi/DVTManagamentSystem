@@ -1,17 +1,61 @@
 ﻿@model  DVTManagementSystem.Models.UserProfile
 @{
     ViewBag.Title = "Login";
+
 }
 
-<h1>Login</h1>
+<link rel="stylesheet " href="~/Content/CSSLogin.css" />
+
+
 
 @using (Html.BeginForm("Login", "Authentication"))
 {
-    <div>
-        @Html.DisplayNameFor(model => model.EmailAddress)
-        @Html.EditorFor(model => model.EmailAddress)
-    </div>
-    <div>
+
+    <div class="labels">
+        
+                <div class="titles"><h1>LOG IN</h1></div>
+
+                @if (ViewBag.Error != null)
+                        {
+
+                    <div>
+                        @ViewBag.Message
+                        <h3 style="color:red">@ViewBag.Error</h3>
+                    </div>
+                }
+
+                @*<div class="table-responsive">
+                    <div class="form-div">*@
+                        <div class="form-group">
+
+                            @Html.DisplayNameFor(model => model.EmailAddress)
+                            <td width="20%">:</td>
+                            <div>
+                                 @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "editor" } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Name("Password")
+                            <td width="20%">:</td>
+                            <div class="editor">
+                                @Html.PasswordFor(model => model.PasswordHash, new { @class = "editor" })
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Login" class="mybtn">
+
+
+                        <div class="errors">
+                            @{
+                                ViewBag.Error = "Login";
+
+                            }
+                        </div>
+                        <div class="links"><a href="url" style="color:#ffd800">Forgot Password?</a></div>
+
+                 
+                
 
        @Html.Name("Password")
        @Html.PasswordFor(model => model.PasswordHash)
@@ -59,11 +103,8 @@
 
 
 
+    </div>       
 
 
-
-
-
-
-
+ }
 
