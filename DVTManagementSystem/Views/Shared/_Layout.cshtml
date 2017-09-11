@@ -11,7 +11,12 @@
     <title>@ViewBag.Title - DVT Management System</title>
     <link rel="stylesheet" href="~/Content/cssStyle.css" />
 
+    @*<link rel="stylesheet" href="~/Content/CSSLogin.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />*@
+
+
     <link rel="stylesheet" href="~/Content/SharedStyling.css" />
+
 </head>
 <body>
     <div class="topnav ">
@@ -34,12 +39,19 @@
     @RenderBody()
 
 
+
+ 
+    <hr />
+    
+    <script src="~/Scripts/bootstrap.js"></script>
+
     <div class="footers">
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - DVT Management System</p>
         </footer>
     </div>
+
 
 </body>
 </html>

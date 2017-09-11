@@ -1,11 +1,13 @@
 
 ﻿
-body {
+
+body {margin :1px;
+
+
     margin: 20px;
 
-feature/forgotPassword
 
-body {margin:20px;
+
 
 }
 
@@ -15,13 +17,24 @@ html {
     background-size: cover;
 
     font-family:'Times New Roman', Times, serif;
-    font
+
+
+
 
 }
 
 .topnav {
     overflow: hidden;
     background-color: #333;
+}
+
+  padding: 14px 16px;
+  text-decoration: none;
+ 
+}
+.topnav  a :active {
+    background-color: #4CAF50;
+    color: white;
 }
 
     .topnav a {
@@ -38,6 +51,7 @@ html {
         background-color: #4CAF50;
         color: white;
     }
+
 
 .nav {
     width: 780px;
