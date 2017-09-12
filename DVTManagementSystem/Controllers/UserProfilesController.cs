@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using DVTManagementSystem.Models;
+using DVTManagementSystem.Models.Context;
+using DVTManagementSystem.Services;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
+<<<<<<< HEAD
 using DVTManagementSystem.Models;
 using DVTManagementSystem.Models.Context;
 
+=======
+>>>>>>> d572de5d6a434cb7ee54c1292847c85ae375613b
 
 namespace DVTManagementSystem.Controllers
 {
@@ -47,6 +49,15 @@ namespace DVTManagementSystem.Controllers
             return View();
         }
 
+<<<<<<< HEAD
+=======
+        public ActionResult UserProfile()
+        {
+            return View();
+        }
+
+
+>>>>>>> d572de5d6a434cb7ee54c1292847c85ae375613b
         // POST: UserProfiles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.

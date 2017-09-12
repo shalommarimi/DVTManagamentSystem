@@ -33,8 +33,10 @@ namespace DVTManagementSystem.Models
         public string ConfirmPasswordHash { get; set; }
 
         public int DepartmentId { get; set; }
-
+        [Display(Name ="Approve")]
         public bool IsApproved { get; set; }
+
+        public bool IsDeleted { get; set; }
 
         public virtual Gender Gender { get; set; }
 
