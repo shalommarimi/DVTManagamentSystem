@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace DVTManagementSystem.Services
@@ -21,6 +22,11 @@ namespace DVTManagementSystem.Services
             {
                 return stringBuilder.ToString();
             }
+        }
+
+        internal string HashInput(object passwordHash)
+        {
+            throw new NotImplementedException();
         }
     }
 }

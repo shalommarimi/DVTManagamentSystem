@@ -14,11 +14,56 @@
     <div>
 
        @Html.Name("Password")
-       @Html.PasswordFor(model=> model.PasswordHash)
+       @Html.PasswordFor(model => model.PasswordHash)
 </div>
        <input type="submit" value="Login" class="btn btn-default" >
-   }
-    
+}
+<div data-toggle="modal" data-target="#myModal" style="cursor:pointer;color:yellow" >
+    <p>FORGET PASSWORD?</p>
+</div>
+
+@using (Html.BeginForm("LostPassword", "LostPassword"))
+{
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">FORGET PASSWORD</h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <form action="LostPassword" method="post">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                @Html.DisplayNameFor(model => model.EmailAddress)
+
+                                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">SUBMIT</button>
+                            <button class="btn btn-primary" data-dismiss="modal">CLOSE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
 
-  
+
+
+
+
+
+
+
+
+
