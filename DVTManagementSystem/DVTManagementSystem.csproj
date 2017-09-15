@@ -212,11 +212,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709081241421_azureDb.cs" />
-    <Compile Include="Migrations\201709081241421_azureDb.Designer.cs">
-      <DependentUpon>201709081241421_azureDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel\LostPasswordModel.cs" />
     <Compile Include="Models\AccountModel\ResetPasswordModel.cs" />
     <Compile Include="Models\Address.cs" />
@@ -286,11 +281,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709081241421_azureDb.resx">
-      <DependentUpon>201709081241421_azureDb.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

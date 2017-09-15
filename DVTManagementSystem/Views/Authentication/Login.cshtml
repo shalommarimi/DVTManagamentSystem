@@ -5,7 +5,11 @@
 }
 
 <link rel="stylesheet " href="~/Content/CSSLogin.css" />
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="~/Scripts/PopUpFunction.js"></script>
 
 
 @using (Html.BeginForm("Login", "Authentication"))
@@ -52,19 +56,14 @@
 
                             }
                         </div>
-                        <div class="links"><a href="url" style="color:#ffd800">Forgot Password?</a></div>
-
-                 
-                
-
-       @Html.Name("Password")
-       @Html.PasswordFor(model => model.PasswordHash)
+        <div data-toggle="modal" data-target="#myModal" style="cursor:pointer;color:yellow">
+            <p>FORGET PASSWORD?</p>
+        </div>
+ 
 </div>
-       <input type="submit" value="Login" class="btn btn-default" >
+    
 }
-<div data-toggle="modal" data-target="#myModal" style="cursor:pointer;color:yellow" >
-    <p>FORGET PASSWORD?</p>
-</div>
+
 
 @using (Html.BeginForm("LostPassword", "LostPassword"))
 {
@@ -100,10 +99,6 @@
         </div>
     </div>
 }
-
-
-
-    </div>       
 
 
  }
